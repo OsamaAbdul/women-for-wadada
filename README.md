@@ -4,7 +4,7 @@
 
 A modern, responsive, and professional landing page for **Nasarawa Young Women for Wadada (NASYOWWA)**. This volunteer-driven movement is established to mobilise, educate, organise, and empower young women across the 13 Local Government Areas in Nasarawa State in support of Senator Ahmed Wadada Aliyu's vision for an inclusive and prosperous state.
 
-## 🚀 Features
+## Features
 
 - **Modern & Responsive UI**: Fully responsive design tailored for mobile, tablet, and desktop experiences.
 - **Smooth Animations**: Engaging and subtle animations using Framer Motion to enhance user experience.
@@ -13,7 +13,7 @@ A modern, responsive, and professional landing page for **Nasarawa Young Women f
 - **Fast Development**: Powered by Vite for instant server starts and lightning-fast HMR (Hot Module Replacement).
 - **Type-Safe Routing**: Utilizes TanStack Router for robust, developer-friendly navigation.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework**: [React 19](https://react.dev/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
@@ -23,7 +23,7 @@ A modern, responsive, and professional landing page for **Nasarawa Young Women f
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 ├── public/                 # Static assets (logos, icons, etc.)
@@ -43,7 +43,7 @@ A modern, responsive, and professional landing page for **Nasarawa Young Women f
 └── vite.config.ts          # Vite configuration
 ```
 
-## 💻 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -77,13 +77,13 @@ npm run build
 ```
 The optimized assets will be generated in the `dist` folder, which can be deployed to any static hosting service (Vercel, Netlify, GitHub Pages, etc.).
 
-## 🎨 Design System
+##  Design System
 
 The application design is guided by principles of elegance, community-focus, and professionalism:
 - **Color Palette**: Highlights the primary `#BC00BA` color on a clean white background.
 - **Typography**: Clean, modern fonts configured globally.
 - **Layouts**: Thoughtfully spaced cards with subtle drop shadows to convey trustworthiness and premium quality.
 
-## 📄 License
+##  License
 
 This project is proprietary and intended for the NASYOWWA organization. All rights reserved.
