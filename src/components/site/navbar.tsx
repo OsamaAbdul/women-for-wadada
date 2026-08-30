@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { nav } from "@/data/nasyowwa";
 import { cn } from "@/lib/utils";
 
@@ -19,13 +20,13 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         scrolled || open
-          ? "border-b border-border bg-background/95 backdrop-blur"
+          ? "border-b border-border bg-background/20 backdrop-blur-lg"
           : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-48 max-w-[1280px] items-center justify-between px-5 sm:px-8">
+      <div className="mx-auto flex h-24 max-w-[1280px] items-center justify-between px-5 sm:px-8">
         <a href="#home" className="flex items-center gap-2">
-          <img src="/logo.png" alt="NASYOWWA Logo" className="h-40 w-40 drop-shadow-md" />
+          <img src="/logo.png" alt="NASYOWWA Logo" className="h-28 w-28 md:h-36 md:w-36 drop-shadow-[0_0_25px_oklch(0.53_0.25_328/0.7)] object-contain" />
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
@@ -40,12 +41,12 @@ export function Navbar() {
           ))}
         </nav>
 
-        <a
-          href="#sustainability"
+        <Link
+          to="/register"
           className="hidden rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90 lg:inline-flex"
         >
           Join the Movement
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -73,6 +74,15 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
+          <div className="mt-4 border-t border-border pt-4 px-3">
+            <Link
+              to="/register"
+              onClick={() => setOpen(false)}
+              className="block w-full text-center rounded-full bg-brand px-5 py-3 text-base font-semibold text-brand-foreground shadow-lg shadow-brand/20 transition-opacity hover:opacity-90"
+            >
+              Join the Movement
+            </Link>
+          </div>
         </nav>
       ) : null}
     </header>

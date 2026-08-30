@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
         <div className="grid gap-10 md:grid-cols-2">
           <div>
-            <img src="/logo.png" alt={footer.brand} className="h-40 w-40 drop-shadow-md" />
+            <img src="/logo.png" alt={footer.brand} className="h-40 w-40 drop-shadow-[0_0_25px_oklch(0.53_0.25_328/0.7)]" />
             <p className="mt-2 text-sm font-medium text-brand">{footer.fullName}</p>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">{footer.tagline}</p>
           </div>

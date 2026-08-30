@@ -16,5 +16,5 @@ export function SiteToaster() {
   }, []);
 
   if (!mounted) return null;
-  return <GooeyToaster position="bottom-right" />;
+  return <GooeyToaster position="top-right" />;
 }

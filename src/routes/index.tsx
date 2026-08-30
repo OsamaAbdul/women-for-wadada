@@ -14,6 +14,8 @@ import { Sustainability } from "@/components/site/sustainability";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteToaster } from "@/components/site/toaster";
 
+import { BackToTop } from "@/components/site/back-to-top";
+
 const title = "NASYOWWA — Nasarawa Young Women for Wadada";
 const description =
   "A volunteer-driven movement mobilising, educating and empowering young women across the 13 Local Government Areas of Nasarawa State.";
@@ -48,6 +50,7 @@ function Index() {
         <OrganisationStructure />
         <Sustainability />
       </main>
+      <BackToTop />
       <SiteFooter />
       <SiteToaster />
     </div>
