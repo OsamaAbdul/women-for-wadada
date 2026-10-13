@@ -3,11 +3,11 @@ import {
   ShieldCheck,
   Users,
   Handshake,
-  Scale,
+  Award,
   Sparkles,
   ClipboardCheck,
 } from "lucide-react";
-import { coreValues } from "@/data/nasyowwa";
+import { coreValues } from "@/data/napyw";
 import { Reveal, SectionHeading } from "./reveal";
 
 const icons = {
@@ -15,7 +15,7 @@ const icons = {
   Integrity: ShieldCheck,
   Inclusion: Users,
   Unity: Handshake,
-  Respect: Scale,
+  Leadership: Award,
   Empowerment: Sparkles,
   Accountability: ClipboardCheck,
 } as const;
@@ -24,26 +24,33 @@ export function CoreValues() {
   return (
     <section id="values" className="grid-bg py-20 sm:py-28">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
-        <SectionHeading eyebrow="What guides us" title={coreValues.heading} />
-        <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {coreValues.values.map((value, i) => {
-            const Icon = icons[value as keyof typeof icons];
+        <SectionHeading
+          eyebrow="What Guides Us"
+          title={coreValues.heading}
+          intro="The core values that define our culture, conduct, and commitment to public life:"
+        />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {coreValues.values.map((item, i) => {
+            const Icon = icons[item.name as keyof typeof icons] || Sparkles;
             return (
-              <li key={value}>
-                <Reveal delay={0.04 * i}>
-                  <div className="card-soft flex h-full flex-col items-start gap-4 p-6">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand text-brand-foreground">
+              <Reveal key={item.name} delay={0.04 * i}>
+                <article className="card-soft flex h-full flex-col justify-start p-6 group">
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand text-brand-foreground shadow-sm transition-transform group-hover:scale-105">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
-                    <span className="font-display text-lg font-semibold text-foreground">
-                      {value}
-                    </span>
+                    <h3 className="font-display text-lg font-bold text-foreground">
+                      {item.name}
+                    </h3>
                   </div>
-                </Reveal>
-              </li>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </article>
+              </Reveal>
             );
           })}
-        </ul>
+        </div>
       </div>
     </section>
   );

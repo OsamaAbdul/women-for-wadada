@@ -8,8 +8,8 @@ export function SiteToaster() {
   useEffect(() => {
     setMounted(true);
     const timer = window.setTimeout(() => {
-      gooeyToast.info("Welcome to NASYOWWA", {
-        description: "Mobilising young women across the 13 LGAs of Nasarawa State.",
+      gooeyToast.info("Welcome to NAPYW", {
+        description: "Mobilising Nasarawa Young Women for Inclusive Leadership.",
       });
     }, 1200);
     return () => window.clearTimeout(timer);

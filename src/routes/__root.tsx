@@ -77,14 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Nasarawa Progressive Young Women (NAPYW)" },
+      {
+        name: "description",
+        content:
+          "Mobilising Nasarawa Young Women for Inclusive Leadership — Affiliated with the All Progressives Congress (APC) in Nasarawa State, Nigeria.",
+      },
+      { name: "author", content: "NAPYW" },
+      { property: "og:title", content: "Nasarawa Progressive Young Women (NAPYW)" },
+      {
+        property: "og:description",
+        content:
+          "Mobilising Nasarawa Young Women for Inclusive Leadership — Affiliated with the All Progressives Congress (APC) in Nasarawa State, Nigeria.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {

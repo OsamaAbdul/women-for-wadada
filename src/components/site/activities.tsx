@@ -1,36 +1,62 @@
-import { Users, GraduationCap, HeartHandshake, Radio, Check } from "lucide-react";
-import { activities } from "@/data/nasyowwa";
+import {
+  Users,
+  GraduationCap,
+  BookOpen,
+  HeartHandshake,
+  Radio,
+  Network,
+} from "lucide-react";
+import { activities } from "@/data/napyw";
 import { Reveal, SectionHeading } from "./reveal";
 
-const icons = { Users, GraduationCap, HeartHandshake, Radio } as const;
+const icons = {
+  Users,
+  GraduationCap,
+  BookOpen,
+  HeartHandshake,
+  Radio,
+  Network,
+} as const;
 
 export function Activities() {
   return (
-    <section id="activities" className="grid-bg py-20 sm:py-28">
+    <section id="programmes" className="grid-bg py-20 sm:py-28">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
-        <SectionHeading eyebrow="Programmes" title={activities.heading} intro={activities.intro} />
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {activities.pillars.map((pillar, i) => {
-            const Icon = icons[pillar.icon];
+        <SectionHeading
+          eyebrow="Key Action Areas"
+          title={activities.heading}
+          intro={activities.intro}
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {activities.items.map((item, i) => {
+            const Icon = icons[item.icon as keyof typeof icons] || Users;
             return (
-              <Reveal key={pillar.title} delay={0.06 * i}>
-                <article className="card-soft h-full p-8">
-                  <div className="flex items-center gap-4">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand text-brand-foreground">
-                      <Icon className="h-6 w-6" aria-hidden="true" />
-                    </span>
-                    <h3 className="font-display text-xl font-semibold text-foreground">
-                      {pillar.title}
+              <Reveal key={item.number} delay={0.06 * i}>
+                <article className="card-soft flex h-full flex-col justify-between p-8">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand text-brand-foreground shadow-sm">
+                        <Icon className="h-6 w-6" aria-hidden="true" />
+                      </span>
+                      <span className="font-display text-sm font-bold text-brand">
+                        {item.number}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-6 font-display text-xl font-bold text-foreground">
+                      {item.title}
                     </h3>
+
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
                   </div>
-                  <ul className="mt-6 space-y-3">
-                    {pillar.activities.map((activity) => (
-                      <li key={activity} className="flex items-start gap-3 text-sm text-foreground">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />
-                        <span>{activity}</span>
-                      </li>
-                    ))}
-                  </ul>
+
+                  <div className="mt-6 pt-4 border-t border-border/60">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+                      NAPYW Programme
+                    </span>
+                  </div>
                 </article>
               </Reveal>
             );

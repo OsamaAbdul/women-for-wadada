@@ -126,7 +126,7 @@ export function RegistrationForm() {
       }, 250);
 
       gooeyToast.success("Registration Successful!", {
-        description: `Welcome to NASYOWWA, ${values.fullname}!`,
+        description: `Welcome to NAPYW, ${values.fullname}!`,
       });
       form.reset();
     }, 1500);
@@ -135,9 +135,9 @@ export function RegistrationForm() {
   return (
     <Card className="border-none bg-background/50 shadow-2xl shadow-brand/10 backdrop-blur-xl ring-1 ring-border/50">
       <CardHeader className="text-center pb-8 border-b border-border/50">
-        <CardTitle className="text-2xl font-bold">Member Registration</CardTitle>
+        <CardTitle className="text-2xl font-bold">NAPYW Member Registration</CardTitle>
         <CardDescription>
-          Fill in your details to join the young women movement.
+          Connect with Nasarawa Progressive Young Women to learn about membership opportunities and upcoming activities.
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-8">
