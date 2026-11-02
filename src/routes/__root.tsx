@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -34,12 +33,9 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+function ErrorComponent({ error: _error, reset }: { error: Error; reset: () => void }) {
+  console.error(_error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,21 +73,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nasarawa Progressive Young Women (NAPYW)" },
+      { title: "Nasarawa Progressive Young Women (NAS-PYW)" },
       {
         name: "description",
         content:
-          "Mobilising Nasarawa Young Women for Inclusive Leadership — Affiliated with the All Progressives Congress (APC) in Nasarawa State, Nigeria.",
+          "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation — All Progressives Congress (APC) in Nasarawa State, North Central Nigeria.",
       },
-      { name: "author", content: "NAPYW" },
-      { property: "og:title", content: "Nasarawa Progressive Young Women (NAPYW)" },
+      { name: "author", content: "NAS-PYW" },
+      { property: "og:site_name", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
+      { property: "og:title", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
       {
         property: "og:description",
         content:
-          "Mobilising Nasarawa Young Women for Inclusive Leadership — Affiliated with the All Progressives Congress (APC) in Nasarawa State, Nigeria.",
+          "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation — All Progressives Congress (APC) in Nasarawa State, North Central Nigeria.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:secure_url", content: "/og-image.png" },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
+      {
+        name: "twitter:description",
+        content:
+          "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation — All Progressives Congress (APC) in Nasarawa State, North Central Nigeria.",
+      },
+      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image:alt", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
     ],
     links: [
       {
@@ -104,7 +115,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400..700&display=swap",
       },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", href: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { rel: "icon", href: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
       { rel: "icon", href: "/logo.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
     ],
   }),
   shellComponent: RootShell,

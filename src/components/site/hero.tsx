@@ -13,15 +13,18 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>{hero.eyebrow}</span>
+          </div>
 
-
-          <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             {hero.headline}
           </h1>
 
           <div className="mt-4 rounded-xl border-l-4 border-brand bg-brand-soft/60 px-4 py-2.5">
             <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-              Theme: <span className="font-bold lowercase capitalize text-foreground">{hero.theme}</span>
+              Theme: <span className="font-bold text-foreground">{hero.theme}</span>
             </p>
           </div>
 
@@ -81,7 +84,7 @@ export function Hero() {
               Our Call
             </p>
             <p className="mt-1 text-sm font-bold leading-snug">
-              Connect. Learn. Lead. Serve.
+              Vote • Lead • Speak Up • Serve
             </p>
           </div>
         </motion.div>

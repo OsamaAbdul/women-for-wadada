@@ -6,18 +6,20 @@ import {
   Award,
   Sparkles,
   ClipboardCheck,
+  Vote,
 } from "lucide-react";
 import { coreValues } from "@/data/napyw";
 import { Reveal, SectionHeading } from "./reveal";
 
 const icons = {
-  Service: HandHeart,
-  Integrity: ShieldCheck,
+  Participation: Vote,
   Inclusion: Users,
-  Unity: Handshake,
-  Leadership: Award,
-  Empowerment: Sparkles,
+  Integrity: ShieldCheck,
   Accountability: ClipboardCheck,
+  Leadership: Award,
+  Unity: Handshake,
+  Service: HandHeart,
+  Empowerment: Sparkles,
 } as const;
 
 export function CoreValues() {

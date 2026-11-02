@@ -1,32 +1,24 @@
-# Nasarawa Progressive Young Women (NAPYW)
+# Nasarawa Progressive Young Women (NAS-PYW)
 
-Theme: **Mobilising Nasarawa Young Women for Inclusive Leadership**
+Theme: **Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation**
 
-![NAPYW Logo](public/logo.png)
+![NAS-PYW Logo](public/logo.png)
 
-A modern, responsive, and professional web platform for **Nasarawa Progressive Young Women (NAPYW)**. Affiliated with the All Progressives Congress (APC) in Nasarawa State, Nigeria, the group provides a structured platform for young women within the party to connect, organise, develop leadership capacity and participate actively in party affairs, community development and public life across all 13 Local Government Areas.
+A modern, responsive, and professional web platform for **Nasarawa Progressive Young Women (NAS-PYW)**. Affiliated with the All Progressives Congress (APC) in Nasarawa State, North Central Nigeria, the group brings young women into politics, democratic processes, and governance as informed participants, decision-makers, and leaders across all 13 Local Government Areas.
 
 ## Key Content Sections
 
-- **About NAPYW**: Detailed background on inclusion, service, leadership development, and grassroots engagement across the 13 LGAs.
-- **Vision & Mission**: Clear organizational vision and mission within the APC in Nasarawa State.
-- **Objectives**: All 8 core objectives covering participation, structures, mentorship, political education, networking, and sustainability.
-- **Core Values**: Service, Integrity, Inclusion, Unity, Leadership, Empowerment, and Accountability with full definitions.
-- **Target Audience**: Demographic coverage (18–40, students, professionals, entrepreneurs, artisans) and stakeholder engagement.
-- **Programmes and Activities**: 6 key action areas including Grassroots Organisation, Leadership Development, Political Education, Community Development, Media Engagement, and Networking.
-- **Organisational Structure**: 6-level governance hierarchy and coordination frameworks.
-- **Expected Outcomes**: Projected impact across grassroots capacity and political opportunities.
+- **About NAS-PYW**: Background on inclusion, leadership development, and grassroots engagement across the 13 LGAs.
+- **Vision & Mission**: Clear vision and mission within the APC in Nasarawa State.
+- **Objectives**: All 8 strategic objectives covering political participation, offices/appointments, grassroots structures, political education, and accountability.
+- **Core Values**: Participation, Inclusion, Integrity, Accountability, Leadership, Unity, and Service.
+- **Who We Engage**: Young women aged 18–40, students, graduates, professionals, entrepreneurs, community volunteers, and experienced mentors.
+- **Programmes and Activities**: 7 action areas including Grassroots Mobilisation, Political Education, Leadership Development, Policy Engagement, Civic Service, Media Engagement, and Stakeholder Partnerships.
+- **Organisational Structure**: Governance hierarchy across Grand Patron/Patrons, Convener / Co-convener, State Executive Committee, LGA Coordinators, Ward Coordinators, and Community Volunteers.
+- **Expected Outcomes**: Measurable impact across grassroots political participation.
 - **Sustainability and Long-Term Commitment**: Continuing platform beyond individual electoral cycles.
-- **Our Commitment**: Platform dedication and the collective motto.
-- **Become Part of NAPYW**: Official interactive membership registration with Nasarawa State LGAs and wards.
-
-## Features
-
-- **Modern & Responsive UI**: Fully responsive design tailored for mobile, tablet, and desktop experiences.
-- **Smooth Animations**: Subtle and engaging animations using Framer Motion to enhance user experience.
-- **Component-Driven**: Built with highly reusable components using React and Radix UI primitives.
-- **Type-Safe**: Developed in TypeScript for robust and maintainable code.
-- **TanStack Start & Router**: Modern routing and SSR performance with TanStack.
+- **Our Commitment**: *"Democracy works best when women are part of it. We are building a network of young women who vote, lead, speak up and serve."*
+- **Join NAS-PYW**: Official interactive membership registration with Nasarawa State 13 LGAs and wards.
 
 ## Tech Stack
 
@@ -63,4 +55,4 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 ## License
 
-This project is proprietary and intended for Nasarawa Progressive Young Women (NAPYW). All rights reserved.
+This project is proprietary and intended for Nasarawa Progressive Young Women (NAS-PYW). All rights reserved.

@@ -8,8 +8,8 @@ export function SiteToaster() {
   useEffect(() => {
     setMounted(true);
     const timer = window.setTimeout(() => {
-      gooeyToast.info("Welcome to NAPYW", {
-        description: "Mobilising Nasarawa Young Women for Inclusive Leadership.",
+      gooeyToast.info("Welcome to NAS-PYW", {
+        description: "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation.",
       });
     }, 1200);
     return () => window.clearTimeout(timer);

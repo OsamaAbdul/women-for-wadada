@@ -5,6 +5,7 @@ import {
   HeartHandshake,
   Radio,
   Network,
+  Scale,
 } from "lucide-react";
 import { activities } from "@/data/napyw";
 import { Reveal, SectionHeading } from "./reveal";
@@ -16,6 +17,7 @@ const icons = {
   HeartHandshake,
   Radio,
   Network,
+  Scale,
 } as const;
 
 export function Activities() {
@@ -54,7 +56,7 @@ export function Activities() {
 
                   <div className="mt-6 pt-4 border-t border-border/60">
                     <span className="text-xs font-semibold uppercase tracking-wider text-brand">
-                      NAPYW Programme
+                      NAS-PYW Programme
                     </span>
                   </div>
                 </article>

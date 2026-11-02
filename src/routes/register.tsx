@@ -7,19 +7,30 @@ import { SiteToaster } from "@/components/site/toaster";
 import { RegistrationForm } from "@/components/site/registration-form";
 import { callToAction } from "@/data/napyw";
 
-const title = "Become Part of NAPYW — Registration";
+const title = "Join NAS-PYW — Registration";
 const description =
-  "Are you a young woman interested in leadership, service and participation in the APC in Nasarawa State? Connect with Nasarawa Progressive Young Women to learn about membership opportunities and upcoming activities.";
+  "Are you a young woman ready to take part in politics and shape governance in Nasarawa State? Connect with NAS-PYW to learn about membership and upcoming activities.";
 
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
       { title },
       { name: "description", content: description },
+      { property: "og:site_name", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:secure_url", content: "/og-image.png" },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Join Nasarawa Progressive Young Women (NAS-PYW)" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image:alt", content: "Join Nasarawa Progressive Young Women (NAS-PYW)" },
     ],
   }),
   component: RegisterRoute,

@@ -20,19 +20,30 @@ import { SiteToaster } from "@/components/site/toaster";
 import { BackToTop } from "@/components/site/back-to-top";
 import { callToAction } from "@/data/napyw";
 
-const title = "NAPYW — Nasarawa Progressive Young Women";
+const title = "NAS-PYW — Nasarawa Progressive Young Women";
 const description =
-  "Mobilising Nasarawa Young Women for Inclusive Leadership. A platform for young women within the APC in Nasarawa State to connect, organise, develop leadership capacity and participate actively in party affairs and public life.";
+  "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation. A young women's group within the All Progressives Congress (APC) in Nasarawa State, North Central Nigeria.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title },
       { name: "description", content: description },
+      { property: "og:site_name", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:secure_url", content: "/og-image.png" },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image:alt", content: "Nasarawa Progressive Young Women (NAS-PYW)" },
     ],
   }),
   component: Index,
@@ -70,7 +81,7 @@ function Index() {
         <Sustainability />
         <Commitment />
 
-        {/* Become Part of NAPYW CTA Section (Separate registration page link) */}
+        {/* Join NAS-PYW CTA Section (Separate registration page link) */}
         <section id="register" className="py-24 relative isolate">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand/10 via-background to-background"></div>
           <div className="mx-auto max-w-4xl px-5 sm:px-8">
@@ -111,7 +122,7 @@ function Index() {
                   href="#about"
                   className="inline-flex h-13 items-center justify-center rounded-full border border-border bg-card px-7 text-sm font-semibold text-foreground transition-colors hover:border-brand hover:text-brand"
                 >
-                  Learn More About NAPYW
+                  Learn More About NAS-PYW
                 </a>
               </div>
             </div>

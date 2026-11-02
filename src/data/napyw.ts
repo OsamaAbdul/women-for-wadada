@@ -4,7 +4,7 @@ export const nav = [
   { label: "Vision & Mission", target: "#vision-mission" },
   { label: "Objectives", target: "#objectives" },
   { label: "Core Values", target: "#values" },
-  { label: "Target Audience", target: "#audience" },
+  { label: "Who We Engage", target: "#audience" },
   { label: "Programmes", target: "#programmes" },
   { label: "Structure", target: "#structure" },
   { label: "Outcomes", target: "#outcomes" },
@@ -13,28 +13,26 @@ export const nav = [
 ];
 
 export const hero = {
-  eyebrow: "NASARAWA PROGRESSIVE YOUNG WOMEN (NAPYW)",
-  theme: "Mobilising Nasarawa Young Women for Inclusive Leadership",
-  headline: "Mobilising Nasarawa Young Women for Inclusive Leadership",
-  affiliation: "Affiliated with the All Progressives Congress (APC) in Nasarawa State, Nigeria",
+  eyebrow: "All Progressives Congress (APC) • Nasarawa State",
+  theme: "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation",
+  headline: "Nasarawa Progressive Young Women (NAS-PYW)",
+  affiliation: "All Progressives Congress (APC) in Nasarawa State, North Central Nigeria",
   description:
-    "A structured platform for young women within the APC to connect, organise, develop leadership capacity and participate actively in party affairs, community development and public life.",
-  primaryCta: { label: "Become Part of NAPYW", target: "#register" },
-  secondaryCta: { label: "Explore About NAPYW", target: "#about" },
+    "A young women's group within the All Progressives Congress (APC) in Nasarawa State, North Central Nigeria. It exists to bring young women into politics, democratic processes and governance, not as spectators, but as informed participants, decision-makers and leaders.",
+  primaryCta: { label: "Join NAS-PYW", target: "#register" },
+  secondaryCta: { label: "About NAS-PYW", target: "#about" },
   stat: { value: "13", label: "Local Government Areas" },
-  taglineBadge: "Connect • Learn • Lead • Serve",
+  taglineBadge: "Vote • Lead • Speak Up • Serve",
 };
 
 export const about = {
-  heading: "About NAPYW",
+  heading: "About NAS-PYW",
   subheading: "Who We Are",
-  badge: "Nasarawa Progressive Young Women (NAPYW)",
-  theme: "Mobilising Nasarawa Young Women for Inclusive Leadership",
+  badge: "Nasarawa Progressive Young Women (NAS-PYW)",
+  theme: "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation",
   paragraphs: [
-    "Nasarawa Progressive Young Women (NAPYW) is a young women's group affiliated with the All Progressives Congress (APC) in Nasarawa State, Nigeria. The group provides a structured platform for young women within the party to connect, organise, develop leadership capacity and participate actively in party affairs and public life.",
-    "With a focus on inclusion, service, leadership development and grassroots engagement, NAPYW seeks to strengthen the participation of young women in political organisation, community development and democratic processes across the state's 13 Local Government Areas.",
-    "The group recognises the importance of creating opportunities for young women to contribute their ideas, skills and perspectives to political discussions, leadership processes and the development of their communities.",
-    "Through its state, LGA and ward structures, NAPYW aims to build a connected network of young women who can engage constructively with party institutions, develop their leadership potential and contribute to the advancement of women within the political space.",
+    "Nasarawa Progressive Young Women (NAS-PYW) is a young women's group within the All Progressives Congress (APC) in Nasarawa State, North Central Nigeria. It exists to bring young women into politics, democratic processes and governance, not as spectators, but as informed participants, decision-makers and leaders.",
+    "Across the state's 13 Local Government Areas, NAS-PYW works to ensure that young women have a real voice in party affairs, electoral processes and public decision-making. Through its state, LGA and ward structures, it builds a connected network of young women who understand how politics and governance work and are ready to take part in them.",
   ],
 };
 
@@ -45,65 +43,65 @@ export const visionMission = {
   heading: "Vision & Mission",
   vision: {
     title: "Vision",
-    text: "To become a leading network of progressive young women within the APC in Nasarawa State, promoting leadership, participation, service and the development of women in public life.",
+    text: "A Nasarawa State where young women are active, informed and influential in politics and governance, at every level of decision-making.",
   },
   mission: {
     title: "Mission",
-    text: "To organise, connect and empower young women within the APC through leadership development, political education, mentorship, grassroots participation and community engagement.",
+    text: "To mobilise, educate and equip young women to participate fully in democratic processes, party leadership, elections and public service, and to hold institutions accountable.",
   },
 };
 
 export const objectives = {
   heading: "Objectives",
-  intro: "NAPYW is established to pursue the following objectives:",
+  intro: "NAS-PYW is established to pursue the following strategic objectives:",
   items: [
     {
       number: "01",
-      title: "Active Participation",
+      title: "Political Participation",
       description:
-        "Promote young women's participation in party affairs, leadership processes and public decision-making.",
+        "Increase young women's participation in party politics, elections and public decision-making.",
     },
     {
       number: "02",
-      title: "Functional Structures",
+      title: "Offices & Appointments",
       description:
-        "Establish and strengthen functional structures across all 13 LGAs and wards of Nasarawa State.",
+        "Prepare and support young women to seek party positions, elective offices and public appointments.",
     },
     {
       number: "03",
-      title: "Leadership Development",
+      title: "Grassroots Structures",
       description:
-        "Develop future women leaders through mentorship, leadership training, public speaking and professional development.",
+        "Build functional structures across all 13 LGAs and wards to organise grassroots political participation.",
     },
     {
       number: "04",
       title: "Political Education",
       description:
-        "Promote political education, civic awareness and responsible participation in democratic processes.",
+        "Promote political education, voter awareness and an understanding of how government works.",
     },
     {
       number: "05",
-      title: "Cross-Sector Network",
+      title: "Skills & Advocacy",
       description:
-        "Connect young women across professional, educational, entrepreneurial and community backgrounds.",
+        "Develop leadership, advocacy, negotiation and public speaking skills for political and public life.",
     },
     {
       number: "06",
-      title: "Community Initiatives",
+      title: "Policy & Community Priorities",
       description:
-        "Encourage members to participate in community development initiatives that address local needs and promote social wellbeing.",
+        "Encourage members to engage with policy issues and community priorities and to bring them to the attention of leaders and institutions.",
     },
     {
       number: "07",
-      title: "Inclusion & Unity",
+      title: "Accountability & Transparency",
       description:
-        "Promote inclusion, unity, mutual respect and constructive engagement among members.",
+        "Foster accountability, transparency and responsible leadership in party and public life.",
     },
     {
       number: "08",
-      title: "Sustainable Platform",
+      title: "Lasting Platform",
       description:
-        "Establish a sustainable platform for young women's participation in party affairs beyond individual electoral cycles.",
+        "Establish a lasting platform for women's political participation that continues beyond individual electoral cycles.",
     },
   ],
 };
@@ -113,78 +111,72 @@ export const coreValues = {
   subheading: "Guiding Principles",
   values: [
     {
-      name: "Service",
+      name: "Participation",
       description:
-        "Commitment to contributing meaningfully to the party and the communities in which members live and work.",
-    },
-    {
-      name: "Integrity",
-      description:
-        "Upholding honesty, transparency and ethical conduct in organisational activities.",
+        "Every young woman has a right and a responsibility to take part in shaping her community, State and country.",
     },
     {
       name: "Inclusion",
       description:
-        "Creating opportunities for young women from different backgrounds and communities to participate.",
+        "Young Women of all backgrounds, professions and communities deserve a seat at the table.",
     },
     {
-      name: "Unity",
+      name: "Integrity",
       description:
-        "Building relationships founded on mutual respect, cooperation and shared responsibility.",
-    },
-    {
-      name: "Leadership",
-      description:
-        "Developing the knowledge, confidence and skills young women need to contribute to organisational and public life.",
-    },
-    {
-      name: "Empowerment",
-      description:
-        "Supporting young women to develop their abilities, pursue opportunities and contribute to their communities.",
+        "Honest, ethical conduct in politics and public service.",
     },
     {
       name: "Accountability",
       description:
-        "Promoting responsible decision-making and the proper management of organisational resources.",
+        "Responsible use of power and resources, and a duty to answer to the people served.",
+    },
+    {
+      name: "Leadership",
+      description:
+        "Building the confidence, knowledge and skills to lead in party and public life.",
+    },
+    {
+      name: "Unity",
+      description:
+        "Cooperation and mutual respect in pursuit of shared goals.",
+    },
+    {
+      name: "Service",
+      description:
+        "Politics and governance as a means of serving communities.",
     },
   ],
 };
 
 export const audience = {
-  heading: "Target Audience",
-  subheading: "Who We Engage",
-  intro: "NAPYW seeks to engage young women within the APC across Nasarawa State, including:",
+  heading: "Who We Engage",
+  subheading: "Inclusion & Constituency",
+  intro:
+    "NAS-PYW actively connects, engages and mobilises across diverse backgrounds in Nasarawa State, including:",
   groups: [
-    "Young women aged 18–40.",
-    "Female students and young graduates.",
+    "Young women aged 18–40 interested in politics, governance and public service.",
+    "Students and young graduates.",
     "Young professionals.",
-    "Women entrepreneurs and business owners.",
-    "Market women and female artisans.",
+    "Women entrepreneurs.",
     "Community volunteers and emerging leaders.",
-    "Young women interested in political participation and public service.",
   ],
   stakeholderNote:
-    "The group also recognises the value of engaging experienced women leaders, mentors, community influencers and relevant party stakeholders to support its programmes.",
-  // Legacy aliases for backward compatibility if needed
+    "Experienced women leaders, mentors and party stakeholders who can guide and support aspiring leaders.",
+  // Aliases for compatibility
   primary: {
     title: "Key Demographics",
     groups: [
-      "Young women aged 18–40.",
-      "Female students and young graduates.",
+      "Young women aged 18–40 interested in politics, governance and public service.",
+      "Students and young graduates.",
       "Young professionals.",
-      "Women entrepreneurs and business owners.",
-      "Market women and female artisans.",
+      "Women entrepreneurs.",
       "Community volunteers and emerging leaders.",
-      "Young women interested in political participation and public service.",
     ],
   },
   secondary: {
     title: "Mentors & Stakeholders",
     groups: [
-      "Experienced women leaders",
-      "Mentors and role models",
-      "Community influencers",
-      "Relevant APC party stakeholders",
+      "Experienced women leaders, mentors and party stakeholders who can guide and support aspiring leaders.",
     ],
   },
 };
@@ -193,91 +185,98 @@ export const activities = {
   heading: "Programmes and Activities",
   subheading: "What We Do",
   intro:
-    "NAPYW will implement structured programmes across grassroots engagement, leadership training, political education, community service, media outreach and stakeholder collaboration.",
+    "NAS-PYW implements structured initiatives across grassroots mobilisation, political education, leadership mentorship, governance advocacy and civic service.",
   items: [
     {
       number: "01",
-      title: "Grassroots Organisation and Engagement",
+      title: "Grassroots Political Mobilisation",
       description:
-        "NAPYW will establish and strengthen its organisational presence across the 13 LGAs and ward structures in Nasarawa State. Activities will include membership engagement, coordination meetings, volunteer development and structured communication between grassroots members and the state leadership.",
+        "Building and strengthening NAS-PYW structures in all 13 LGAs and wards. This includes membership drives, coordination meetings, voter mobilisation, and clear channels between grassroots members and state leadership.",
       icon: "Users",
     },
     {
       number: "02",
-      title: "Leadership Development and Mentorship",
+      title: "Political Education and Civic Awareness",
       description:
-        "The group will facilitate opportunities for young women to build leadership, communication, public speaking, organisational and advocacy skills. Mentorship and peer-learning initiatives will connect members with experienced women leaders and professionals.",
-      icon: "GraduationCap",
-    },
-    {
-      number: "03",
-      title: "Political Education and Participation",
-      description:
-        "NAPYW will promote awareness of party structures, democratic processes, leadership responsibilities and civic participation. Members will be encouraged to engage constructively in party affairs and understand the responsibilities associated with political and public leadership.",
+        "Training on party structures, electoral processes, voter rights, the Constitution, and the roles and responsibilities of public office, so members participate with knowledge and confidence.",
       icon: "BookOpen",
     },
     {
-      number: "04",
-      title: "Community Development and Volunteerism",
+      number: "03",
+      title: "Leadership Development and Mentorship",
       description:
-        "The group will encourage members to participate in community-focused activities, including educational outreach, health awareness, skills development, entrepreneurship support and environmental sanitation initiatives, according to identified needs and available resources.",
-      icon: "HeartHandshake",
+        "Programmes in leadership, advocacy, public speaking and campaign skills, with mentorship from experienced women leaders and professionals. A key aim is preparing members to contest for party and elective positions.",
+      icon: "GraduationCap",
+    },
+    {
+      number: "04",
+      title: "Policy Engagement and Governance Advocacy",
+      description:
+        "Creating spaces for young women to discuss policy, raise community concerns and contribute ideas on issues such as education, health, economic opportunity and women's inclusion, and to engage with leaders and government institutions.",
+      icon: "Scale",
     },
     {
       number: "05",
-      title: "Media and Digital Engagement",
+      title: "Community Engagement and Civic Service",
       description:
-        "NAPYW will use appropriate media and digital platforms to communicate organisational activities, share information, document achievements and provide opportunities for members to connect across the state.",
-      icon: "Radio",
+        "Community-based activities, including health awareness, education outreach, skills development, that connect political participation to practical service and build public trust.",
+      icon: "HeartHandshake",
     },
     {
       number: "06",
-      title: "Networking and Stakeholder Engagement",
+      title: "Media and Digital Engagement",
       description:
-        "The group will promote constructive engagement with recognised APC structures, women leaders, youth organisations, professionals and relevant community stakeholders to support its objectives and strengthen opportunities for young women's participation.",
+        "Using media and digital platforms to share information, promote civic awareness, document activities and connect members across the state.",
+      icon: "Radio",
+    },
+    {
+      number: "07",
+      title: "Partnerships and Stakeholder Engagement",
+      description:
+        "Working with APC structures, women leaders, youth organisations, civil society and community stakeholders to expand opportunities for young women in politics and governance.",
       icon: "Network",
     },
   ],
   // Legacy aliases
   pillars: [
     {
-      title: "Grassroots Organisation and Engagement",
+      title: "Grassroots Political Mobilisation",
       icon: "Users",
       activities: [
         "13 LGAs and ward organisational structures",
-        "Membership engagement and coordination meetings",
-        "Volunteer development and grassroots empowerment",
-        "Structured communication with state leadership",
+        "Membership drives and coordination meetings",
+        "Voter mobilisation and grassroots empowerment",
+        "Clear channels between grassroots and state leadership",
+      ],
+    },
+    {
+      title: "Political Education and Civic Awareness",
+      icon: "BookOpen",
+      activities: [
+        "Party structures and electoral processes",
+        "Voter rights and the Nigerian Constitution",
+        "Public office roles and responsibilities",
+        "Knowledgeable, confident participation",
       ],
     },
     {
       title: "Leadership Development and Mentorship",
       icon: "GraduationCap",
       activities: [
-        "Leadership, communication and public speaking skills",
-        "Organisational and advocacy skills development",
+        "Leadership, advocacy and public speaking",
+        "Campaign skills and negotiation development",
         "Mentorship from experienced women leaders",
-        "Peer-learning initiatives and career development",
+        "Preparing candidates for party and elective positions",
       ],
     },
     {
-      title: "Political Education and Participation",
-      icon: "Radio",
-      activities: [
-        "Awareness of APC party structures",
-        "Democratic processes and civic participation",
-        "Leadership responsibilities in public life",
-        "Constructive engagement in party affairs",
-      ],
-    },
-    {
-      title: "Community Development and Volunteerism",
+      title: "Policy & Community Engagement",
       icon: "HeartHandshake",
       activities: [
-        "Educational outreach & health awareness",
-        "Skills development and vocational training",
-        "Entrepreneurship and small business support",
-        "Environmental sanitation and civic initiatives",
+        "Policy dialogues on education, health & economy",
+        "Health awareness and educational outreach",
+        "Skills development and practical community service",
+        "Building public trust and stakeholder partnerships",
       ],
     },
   ],
@@ -287,116 +286,117 @@ export const structure = {
   heading: "Organisational Structure",
   subheading: "Governance Framework",
   intro:
-    "NAPYW will operate through a coordinated structure designed to support administration, communication and grassroots engagement.",
-  proposedStructureIntro: "The proposed structure comprises:",
+    "NAS-PYW operates through a coordinated state, LGA and ward hierarchy designed to organise grassroots political participation and ensure accountability.",
+  proposedStructureIntro: "The organisational structure comprises:",
   hierarchy: [
     { level: 1, role: "Grand Patron/Patrons" },
-    { level: 2, role: "Convener" },
+    { level: 2, role: "Convener/ Co-convener" },
     { level: 3, role: "State Executive Committee" },
-    { level: 4, role: "LGA Coordinators across the 13 Local Government Areas", quantity: "13" },
+    { level: 4, role: "LGA Coordinators (13 LGAs)", quantity: "13" },
     { level: 5, role: "Ward Coordinators" },
     { level: 6, role: "Community-Level Members and Volunteers" },
   ],
   paragraphs: [
-    "The State Executive Committee will coordinate the group's administrative and programme activities. LGA and ward coordinators will support membership engagement, communication, reporting and implementation of approved initiatives.",
-    "Appointments, tenure, responsibilities and other governance arrangements will be guided by the group's approved framework and applicable APC requirements.",
+    "The State Executive Committee coordinates administration and programmes. LGA and ward coordinators lead membership engagement, political mobilisation, reporting and implementation.",
+    "Governance arrangements will follow the group's approved framework and applicable APC requirements.",
   ],
 };
 
 export const outcomes = {
   heading: "Expected Outcomes",
   subheading: "Projected Impact",
-  intro: "Through its activities and organisational structure, NAPYW aims to achieve:",
+  intro:
+    "Through its activities, leadership development and grassroots structures, NAS-PYW aims to deliver:",
   items: [
     {
-      title: "Coordinated State-Wide Network",
-      description: "A coordinated network of young women across the 13 LGAs of Nasarawa State.",
-    },
-    {
-      title: "Functional Grassroots Structures",
-      description: "Functional LGA and ward structures.",
-    },
-    {
-      title: "Greater Political Opportunities",
-      description: "Greater opportunities for young women's participation in party affairs.",
-    },
-    {
-      title: "Enhanced Capacities",
-      description: "Improved leadership and organisational capacities among members.",
-    },
-    {
-      title: "Mentorship & Collaboration",
+      title: "Coordinated Network",
       description:
-        "Stronger networks for mentorship, collaboration and professional development.",
+        "A coordinated network of politically engaged young women across all 13 LGAs.",
     },
     {
-      title: "Community Service Participation",
-      description: "Increased participation in community service and development initiatives.",
-    },
-    {
-      title: "Effective Communication Flow",
+      title: "Functional Structures",
       description:
-        "Improved communication between grassroots members and organisational leadership.",
+        "Functional LGA and ward structures.",
     },
     {
-      title: "Sustainable Public Life Platform",
+      title: "Active Participation",
       description:
-        "A sustainable platform for young women's continued engagement in political and public life.",
+        "More young women participating in party processes, voting and leadership.",
+    },
+    {
+      title: "Prepared for Public Office",
+      description:
+        "More young women prepared to seek party positions, elective office and public appointments.",
+    },
+    {
+      title: "Knowledge & Skills",
+      description:
+        "Stronger political knowledge, leadership and advocacy skills among members.",
+    },
+    {
+      title: "Closer Engagement",
+      description:
+        "Closer engagement between young women, party leadership and government institutions.",
+    },
+    {
+      title: "Lasting Platform",
+      description:
+        "A lasting platform for women's participation in politics and governance.",
     },
   ],
-  // Raw text items for exact matching
   rawList: [
-    "A coordinated network of young women across the 13 LGAs of Nasarawa State.",
+    "A coordinated network of politically engaged young women across all 13 LGAs.",
     "Functional LGA and ward structures.",
-    "Greater opportunities for young women's participation in party affairs.",
-    "Improved leadership and organisational capacities among members.",
-    "Stronger networks for mentorship, collaboration and professional development.",
-    "Increased participation in community service and development initiatives.",
-    "Improved communication between grassroots members and organisational leadership.",
-    "A sustainable platform for young women's continued engagement in political and public life.",
+    "More young women participating in party processes, voting and leadership.",
+    "More young women prepared to seek party positions, elective office and public appointments.",
+    "Stronger political knowledge, leadership and advocacy skills among members.",
+    "Closer engagement between young women, party leadership and government institutions.",
+    "A lasting platform for women's participation in politics and governance.",
   ],
 };
 
 export const sustainability = {
   heading: "Sustainability and Long-Term Commitment",
-  subheading: "Looking Ahead",
+  subheading: "Continuing Platform",
   paragraphs: [
-    "NAPYW is intended to be a continuing platform for young women's organisation, leadership development and participation within the APC in Nasarawa State.",
-    "Beyond individual electoral cycles, the group will seek to sustain its structures through mentorship, member development, community engagement, professional networking and participation in party affairs.",
-    "Its long-term focus is to support the emergence of informed, responsible and capable young women who can contribute to organisational leadership, public service and community development.",
+    "NAS-PYW is a continuing platform, not an election-season project.",
+    "Through political education, mentorship, member development and active involvement in party affairs, it will sustain a pipeline of informed, capable young women ready to serve in party leadership, public office and community life.",
   ],
   focusAreas: [
+    "Political Education",
     "Mentorship",
     "Member Development",
-    "Community Engagement",
-    "Professional Networking",
-    "Party Affairs Participation",
+    "Party Affairs",
+    "Leadership Pipeline",
   ],
 };
 
 export const commitment = {
   heading: "Our Commitment",
-  subheading: "Dedication to Nasarawa State",
+  subheading: "Democratic Participation",
   paragraphs: [
-    "Nasarawa Progressive Young Women is committed to creating a platform where young women can connect, learn, lead and serve.",
-    "By strengthening grassroots organisation, developing leadership capacity and creating opportunities for participation, NAPYW seeks to contribute to the continued involvement of young women in the APC and in the wider development of Nasarawa State.",
+    "Democracy works best when women are part of it. NAS-PYW is committed to ensuring that young women in Nasarawa State are informed, organised and present wherever decisions are made.",
   ],
   closingStatement:
-    "Together, we are building a connected network of young women committed to leadership, service and progress.",
+    "We are building a network of young women who vote, lead, speak up and serve.",
 };
 
 export const callToAction = {
-  heading: "Become Part of NAPYW",
+  heading: "Join NAS-PYW",
   question:
-    "Are you a young woman interested in leadership, service and participation in the APC in Nasarawa State? Connect with Nasarawa Progressive Young Women to learn about membership opportunities and upcoming activities.",
-  signature: "Nasarawa Progressive Young Women (NAPYW)",
-  theme: "Mobilising Nasarawa Young Women for Inclusive Leadership.",
+    "Are you a young woman ready to take part in politics and shape governance in Nasarawa State? Connect with NAS-PYW to learn about membership and upcoming activities.",
+  signature: "Nasarawa Progressive Young Women (NAS-PYW)",
+  theme:
+    "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation.",
 };
 
 export const footer = {
-  brand: "NAPYW",
+  brand: "NAS-PYW",
   fullName: "Nasarawa Progressive Young Women",
-  tagline: "Mobilising Nasarawa Young Women for Inclusive Leadership",
-  affiliation: "Affiliated with the All Progressives Congress (APC) in Nasarawa State, Nigeria",
-  copyright: "© 2026 Nasarawa Progressive Young Women (NAPYW). All rights reserved.",
+  tagline:
+    "Mobilising Nasarawa Young Women for Inclusive Leadership and Democratic Participation",
+  affiliation:
+    "All Progressives Congress (APC) in Nasarawa State, North Central Nigeria",
+  copyright:
+    "© 2026 Nasarawa Progressive Young Women (NAS-PYW). All rights reserved.",
 };

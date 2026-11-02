@@ -62,11 +62,11 @@ export function Navbar() {
         <Link
           to="/"
           className="flex items-center gap-3 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 transition-transform duration-200 active:scale-95"
-          aria-label="NAPYW Homepage"
+          aria-label="NAS-PYW Homepage"
         >
           <img
             src="/logo.png"
-            alt="NAPYW Logo"
+            alt="NAS-PYW Logo"
             className="h-16 w-16 md:h-20 md:w-20 object-contain drop-shadow-[0_0_18px_oklch(0.53_0.25_328/0.65)]"
           />
 
@@ -114,7 +114,7 @@ export function Navbar() {
                 aria-label="Navigate to member registration page"
                 className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-xs font-bold text-brand-foreground shadow-lg shadow-brand/20 transition-all hover:bg-brand/90 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
               >
-                <span>Become Part of NAPYW</span>
+                <span>Join NAS-PYW</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </motion.div>
@@ -162,7 +162,7 @@ export function Navbar() {
             <div className="flex items-center justify-between pb-3 mb-2 border-b border-border/60">
               <span className="text-xs font-bold uppercase tracking-wider text-brand flex items-center gap-1.5">
                 <Sparkles className="h-3.5 w-3.5" />
-                NAPYW Menu
+                NAS-PYW Menu
               </span>
               <span className="text-[11px] text-muted-foreground">
                 APC Nasarawa State
@@ -192,7 +192,7 @@ export function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="flex w-full items-center justify-center gap-2 rounded-2xl bg-brand px-5 py-3.5 text-sm font-bold text-brand-foreground shadow-lg shadow-brand/20 transition-all hover:bg-brand/90 active:scale-[0.98]"
                 >
-                  <span>Become Part of NAPYW</span>
+                  <span>Join NAS-PYW</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               ) : (
