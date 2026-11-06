@@ -45,7 +45,7 @@ create table if not exists public.registrations (
   polling_unit_code    text not null,
   polling_unit_name    text not null,
 
-  voters_card_number   text not null check (voters_card_number ~ '^[0-9]{19}$'),
+  voters_card_number   text not null check (voters_card_number ~ '^[A-Z0-9]{19}$'),
 
   occupation           text not null check (occupation in (
                          'Student', 'Civil Servant', 'Entrepreneur',

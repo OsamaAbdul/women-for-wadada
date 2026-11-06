@@ -276,7 +276,7 @@ export function RegistrationForm() {
                     <FormItem>
                       <FormLabel>Voter's Card Number (VIN)</FormLabel>
                       <FormControl>
-                        <Input placeholder="19-digit VIN number" {...field} maxLength={19} className="bg-background/80" />
+                        <Input placeholder="19 letters and numbers" {...field} maxLength={19} className="bg-background/80 uppercase" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

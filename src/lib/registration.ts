@@ -34,7 +34,11 @@ export const registrationFormSchema = z
     lga: z.string().min(1, "LGA is required"),
     ward: z.string().min(1, "Ward is required"),
     pollingUnit: z.string().min(1, "Polling Unit is required"),
-    votersCardNumber: z.string().regex(/^\d{19}$/, "Voter's Card Number must be exactly 19 digits"),
+    votersCardNumber: z
+      .string()
+      .trim()
+      .toUpperCase()
+      .regex(/^[A-Z0-9]{19}$/, "Voter's Card Number must be exactly 19 letters or numbers"),
     occupation: z
       .string()
       .refine((value) => (OCCUPATIONS as readonly string[]).includes(value), {
