@@ -76,14 +76,14 @@ revoke all on table public.registrations from anon, authenticated;
 -- Private bucket: files are only reachable through short-lived signed URLs
 -- that the server generates after checking the admin. No storage policies
 -- are created, so anon/authenticated clients have no access at all.
--- Max 5 MB per file, images only.
+-- Max 2 MB per file, images only.
 
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values (
   'registration-files',
   'registration-files',
   false,
-  5242880,
+  2097152,
   array['image/jpeg', 'image/png', 'image/webp']
 )
 on conflict (id) do update set

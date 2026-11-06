@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as RegisterRouteImport } from './routes/register'
+import { Route as RegistrationSuccessRouteImport } from './routes/registration-success'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
+import { Route as ApiRegistrationsRouteImport } from './routes/api/registrations'
 import { Route as AdminRegistrationsIdRouteImport } from './routes/admin/registrations/$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -31,6 +33,11 @@ const RegisterRoute = RegisterRouteImport.update({
   path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegistrationSuccessRoute = RegistrationSuccessRouteImport.update({
+  id: '/registration-success',
+  path: '/registration-success',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -40,6 +47,11 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
   id: '/login',
   path: '/login',
   getParentRoute: () => AdminRoute,
+} as any)
+const ApiRegistrationsRoute = ApiRegistrationsRouteImport.update({
+  id: '/api/registrations',
+  path: '/api/registrations',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AdminRegistrationsIdRoute = AdminRegistrationsIdRouteImport.update({
   id: '/registrations/$id',
@@ -51,14 +63,18 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteWithChildren
   '/register': typeof RegisterRoute
+  '/registration-success': typeof RegistrationSuccessRoute
   '/admin/login': typeof AdminLoginRoute
+  '/api/registrations': typeof ApiRegistrationsRoute
   '/admin/': typeof AdminIndexRoute
   '/admin/registrations/$id': typeof AdminRegistrationsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/register': typeof RegisterRoute
+  '/registration-success': typeof RegistrationSuccessRoute
   '/admin/login': typeof AdminLoginRoute
+  '/api/registrations': typeof ApiRegistrationsRoute
   '/admin': typeof AdminIndexRoute
   '/admin/registrations/$id': typeof AdminRegistrationsIdRoute
 }
@@ -67,7 +83,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteWithChildren
   '/register': typeof RegisterRoute
+  '/registration-success': typeof RegistrationSuccessRoute
   '/admin/login': typeof AdminLoginRoute
+  '/api/registrations': typeof ApiRegistrationsRoute
   '/admin/': typeof AdminIndexRoute
   '/admin/registrations/$id': typeof AdminRegistrationsIdRoute
 }
@@ -77,17 +95,28 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/register'
+    | '/registration-success'
     | '/admin/login'
+    | '/api/registrations'
     | '/admin/'
     | '/admin/registrations/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/register' | '/admin/login' | '/admin' | '/admin/registrations/$id'
+  to:
+    | '/'
+    | '/register'
+    | '/registration-success'
+    | '/admin/login'
+    | '/api/registrations'
+    | '/admin'
+    | '/admin/registrations/$id'
   id:
     | '__root__'
     | '/'
     | '/admin'
     | '/register'
+    | '/registration-success'
     | '/admin/login'
+    | '/api/registrations'
     | '/admin/'
     | '/admin/registrations/$id'
   fileRoutesById: FileRoutesById
@@ -96,6 +125,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRouteWithChildren
   RegisterRoute: typeof RegisterRoute
+  RegistrationSuccessRoute: typeof RegistrationSuccessRoute
+  ApiRegistrationsRoute: typeof ApiRegistrationsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -121,6 +152,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/registration-success': {
+      id: '/registration-success'
+      path: '/registration-success'
+      fullPath: '/registration-success'
+      preLoaderRoute: typeof RegistrationSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/': {
       id: '/admin/'
       path: '/'
@@ -134,6 +172,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/login'
       preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof AdminRoute
+    }
+    '/api/registrations': {
+      id: '/api/registrations'
+      path: '/api/registrations'
+      fullPath: '/api/registrations'
+      preLoaderRoute: typeof ApiRegistrationsRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/admin/registrations/$id': {
       id: '/admin/registrations/$id'
@@ -163,6 +208,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRouteWithChildren,
   RegisterRoute: RegisterRoute,
+  RegistrationSuccessRoute: RegistrationSuccessRoute,
+  ApiRegistrationsRoute: ApiRegistrationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

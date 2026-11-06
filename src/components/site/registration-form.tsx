@@ -1,8 +1,8 @@
 import { useState, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "@tanstack/react-router";
 import { gooeyToast } from "goey-toast";
-import confetti from "canvas-confetti";
 
 import {
   Form,
@@ -29,38 +29,13 @@ import {
   type RegistrationFormInput,
   type RegistrationFormValues,
 } from "@/lib/registration";
-import { submitRegistration } from "@/lib/registrations.functions";
-
-function celebrate() {
-  const duration = 3 * 1000;
-  const animationEnd = Date.now() + duration;
-  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
-
-  const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
-
-  const interval: any = setInterval(function () {
-    const timeLeft = animationEnd - Date.now();
-
-    if (timeLeft <= 0) {
-      return clearInterval(interval);
-    }
-
-    const particleCount = 50 * (timeLeft / duration);
-    confetti({
-      ...defaults, particleCount,
-      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-      colors: ['#BC00BA', '#ff66ff', '#ffffff']
-    });
-    confetti({
-      ...defaults, particleCount,
-      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-      colors: ['#BC00BA', '#ff66ff', '#ffffff']
-    });
-  }, 250);
-}
+import { uploadRegistration } from "@/lib/upload-registration";
+import { Progress } from "@/components/ui/progress";
 
 export function RegistrationForm() {
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [uploadPercent, setUploadPercent] = useState(0);
 
   const form = useForm<RegistrationFormInput, unknown, RegistrationFormValues>({
     resolver: zodResolver(registrationFormSchema),
@@ -96,6 +71,7 @@ export function RegistrationForm() {
 
   async function onSubmit(values: RegistrationFormValues) {
     setIsSubmitting(true);
+    setUploadPercent(0);
     try {
       const body = new FormData();
       const fields = {
@@ -116,13 +92,10 @@ export function RegistrationForm() {
       body.append("votersCardFile", values.votersCardFile);
       body.append("pictureFile", values.pictureFile);
 
-      await submitRegistration({ data: body });
+      await uploadRegistration(body, setUploadPercent);
 
-      celebrate();
-      gooeyToast.success("Registration Successful!", {
-        description: `Welcome to NAS-PYW, ${values.fullname}!`,
-      });
       form.reset();
+      navigate({ to: "/registration-success" });
     } catch (error) {
       gooeyToast.error("Registration failed", {
         description: error instanceof Error ? error.message : "Please try again.",
@@ -402,6 +375,18 @@ export function RegistrationForm() {
                 />
               </div>
             </div>
+
+            {isSubmitting && (
+              <div className="space-y-2" role="status" aria-live="polite">
+                <div className="flex items-center justify-between text-sm font-medium text-muted-foreground">
+                  <span>
+                    {uploadPercent < 100 ? "Uploading files..." : "Saving your registration..."}
+                  </span>
+                  <span className="tabular-nums text-brand">{uploadPercent}%</span>
+                </div>
+                <Progress value={uploadPercent} className="h-2.5 bg-brand/15 [&>div]:bg-brand" />
+              </div>
+            )}
 
             <Button
               type="submit"

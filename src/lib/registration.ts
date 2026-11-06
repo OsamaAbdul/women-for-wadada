@@ -10,13 +10,13 @@ export const OCCUPATIONS = [
   "Other",
 ] as const;
 
-export const MAX_UPLOAD_BYTES = 5 * 1024 * 1024;
+export const MAX_UPLOAD_BYTES = 2 * 1024 * 1024;
 export const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 const imageFile = (label: string) =>
   z
     .instanceof(File, { message: `${label} is required` })
-    .refine((file) => file.size <= MAX_UPLOAD_BYTES, `${label} must be 5MB or smaller`)
+    .refine((file) => file.size <= MAX_UPLOAD_BYTES, `${label} must be 2MB or smaller`)
     .refine(
       (file) => ACCEPTED_IMAGE_TYPES.includes(file.type),
       `${label} must be a JPG, PNG or WebP image`,
