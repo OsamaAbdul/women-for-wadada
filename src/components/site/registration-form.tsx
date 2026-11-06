@@ -1,7 +1,6 @@
 import { useState, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { gooeyToast } from "goey-toast";
 import confetti from "canvas-confetti";
 
@@ -24,45 +23,47 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import locationData from "@/data/nasarawa-locations.json";
+import {
+  OCCUPATIONS,
+  registrationFormSchema,
+  type RegistrationFormInput,
+  type RegistrationFormValues,
+} from "@/lib/registration";
+import { submitRegistration } from "@/lib/registrations.functions";
 
-const formSchema = z.object({
-  fullname: z.string().min(2, "Full name must be at least 2 characters"),
-  gender: z.string(),
-  phone: z.string().regex(/^\d{11}$/, "Phone number must be exactly 11 digits"),
-  age: z.coerce.number().min(18, "You must be at least 18 years old").max(40, "You must be at most 40 years old"),
-  lga: z.string().min(1, "LGA is required"),
-  ward: z.string().min(1, "Ward is required"),
-  pollingUnit: z.string().min(1, "Polling Unit is required"),
-  votersCardNumber: z.string().regex(/^\d{19}$/, "Voter's Card Number must be exactly 19 digits"),
-  occupation: z.string().min(1, "Occupation is required"),
-  otherOccupation: z.string().optional(),
-  votersCardFile: z.any().optional(),
-  pictureFile: z.any().optional(),
-}).refine(data => {
-  if (data.occupation === "Other" && !data.otherOccupation) {
-    return false;
-  }
-  return true;
-}, {
-  message: "Please specify your occupation",
-  path: ["otherOccupation"]
-});
+function celebrate() {
+  const duration = 3 * 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
 
-const occupations = [
-  "Student",
-  "Civil Servant",
-  "Entrepreneur",
-  "Artisan",
-  "Farmer",
-  "Unemployed",
-  "Other"
-];
+  const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
+
+  const interval: any = setInterval(function () {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    const particleCount = 50 * (timeLeft / duration);
+    confetti({
+      ...defaults, particleCount,
+      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      colors: ['#BC00BA', '#ff66ff', '#ffffff']
+    });
+    confetti({
+      ...defaults, particleCount,
+      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      colors: ['#BC00BA', '#ff66ff', '#ffffff']
+    });
+  }, 250);
+}
 
 export function RegistrationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<RegistrationFormInput, unknown, RegistrationFormValues>({
+    resolver: zodResolver(registrationFormSchema),
     defaultValues: {
       fullname: "",
       gender: "Female",
@@ -74,8 +75,8 @@ export function RegistrationForm() {
       votersCardNumber: "",
       occupation: "",
       otherOccupation: "",
-      votersCardFile: undefined,
-      pictureFile: undefined,
+      votersCardFile: undefined as unknown as File,
+      pictureFile: undefined as unknown as File,
     },
   });
 
@@ -93,43 +94,42 @@ export function RegistrationForm() {
     return availableWards.find(w => w.code === watchWard)?.pollingUnits || [];
   }, [watchWard, availableWards]);
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: RegistrationFormValues) {
     setIsSubmitting(true);
-    // Simulate network delay
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const body = new FormData();
+      const fields = {
+        fullname: values.fullname,
+        gender: values.gender,
+        phone: values.phone,
+        age: String(values.age),
+        lga: values.lga,
+        ward: values.ward,
+        pollingUnit: values.pollingUnit,
+        votersCardNumber: values.votersCardNumber,
+        occupation: values.occupation,
+        otherOccupation: values.otherOccupation ?? "",
+      };
+      for (const [key, value] of Object.entries(fields)) {
+        body.append(key, value);
+      }
+      body.append("votersCardFile", values.votersCardFile);
+      body.append("pictureFile", values.pictureFile);
 
-      const duration = 3 * 1000;
-      const animationEnd = Date.now() + duration;
-      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+      await submitRegistration({ data: body });
 
-      const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
-
-      const interval: any = setInterval(function () {
-        const timeLeft = animationEnd - Date.now();
-
-        if (timeLeft <= 0) {
-          return clearInterval(interval);
-        }
-
-        const particleCount = 50 * (timeLeft / duration);
-        confetti({
-          ...defaults, particleCount,
-          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-          colors: ['#BC00BA', '#ff66ff', '#ffffff']
-        });
-        confetti({
-          ...defaults, particleCount,
-          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-          colors: ['#BC00BA', '#ff66ff', '#ffffff']
-        });
-      }, 250);
-
+      celebrate();
       gooeyToast.success("Registration Successful!", {
         description: `Welcome to NAS-PYW, ${values.fullname}!`,
       });
       form.reset();
-    }, 1500);
+    } catch (error) {
+      gooeyToast.error("Registration failed", {
+        description: error instanceof Error ? error.message : "Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -329,7 +329,7 @@ export function RegistrationForm() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          {occupations.map(occ => (
+                          {OCCUPATIONS.map(occ => (
                             <SelectItem key={occ} value={occ}>{occ}</SelectItem>
                           ))}
                         </SelectContent>
