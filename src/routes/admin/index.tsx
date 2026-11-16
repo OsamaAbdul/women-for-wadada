@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -529,22 +530,35 @@ function RegistrationDetailDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-h-[92vh] overflow-hidden rounded-3xl border-border/60 p-0 sm:max-w-4xl">
         <div className="relative max-h-[92vh] overflow-y-auto">
-          <div className="sticky top-0 z-10 border-b border-border/60 bg-background/85 px-6 py-5 backdrop-blur-xl sm:px-8">
-            <DialogHeader className="space-y-1 text-left">
-              <DialogTitle className="flex flex-wrap items-center gap-2 pr-8 font-display text-2xl font-extrabold tracking-tight">
-                {data?.fullName || (isLoading ? "Loading registration..." : "Registration details")}
-                {data && (
-                  <Badge className="rounded-full bg-emerald-500/10 text-emerald-700 hover:bg-emerald-500/10 dark:text-emerald-300">
-                    Verified record
-                  </Badge>
-                )}
-              </DialogTitle>
-              <DialogDescription>
-                {data
-                  ? `Submitted ${format(new Date(data.createdAt), "dd MMMM yyyy, HH:mm")}`
-                  : "Full registrant profile and uploaded documents."}
-              </DialogDescription>
-            </DialogHeader>
+          <div className="sticky top-0 z-20 border-b border-border/60 bg-background/90 px-6 py-5 backdrop-blur-xl sm:px-8">
+            <div className="flex items-start justify-between gap-4">
+              <DialogHeader className="min-w-0 flex-1 space-y-1 pr-2 text-left">
+                <DialogTitle className="flex flex-wrap items-center gap-2 font-display text-2xl font-extrabold tracking-tight">
+                  {data?.fullName || (isLoading ? "Loading registration..." : "Registration details")}
+                  {data && (
+                    <Badge className="rounded-full bg-emerald-500/10 text-emerald-700 hover:bg-emerald-500/10 dark:text-emerald-300">
+                      Verified record
+                    </Badge>
+                  )}
+                </DialogTitle>
+                <DialogDescription>
+                  {data
+                    ? `Submitted ${format(new Date(data.createdAt), "dd MMMM yyyy, HH:mm")}`
+                    : "Full registrant profile and uploaded documents."}
+                </DialogDescription>
+              </DialogHeader>
+              <DialogClose asChild>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-9 w-9 shrink-0 rounded-full border-border/70 bg-background/80 shadow-sm transition-all hover:bg-muted"
+                >
+                  <X className="h-4 w-4" />
+                  <span className="sr-only">Close</span>
+                </Button>
+              </DialogClose>
+            </div>
           </div>
 
           <div className="space-y-6 px-6 py-6 sm:px-8 sm:py-7">
