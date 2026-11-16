@@ -54,6 +54,7 @@ export const checkAdminAccess = createServerFn({ method: "GET" })
 const listInput = z.object({
   page: z.coerce.number().int().min(1).max(10_000).default(1),
   search: z.string().max(100).default(""),
+  lga: z.string().max(10).default(""),
 });
 
 export const listRegistrations = createServerFn({ method: "GET" })
@@ -72,6 +73,10 @@ export const listRegistrations = createServerFn({ method: "GET" })
       .select(LIST_COLUMNS, { count: "exact" })
       .order("created_at", { ascending: false })
       .range(from, to);
+
+    if (data.lga) {
+      query = query.eq("lga_code", data.lga);
+    }
 
     if (term) {
       const pattern = `%${term}%`;
